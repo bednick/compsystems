@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static from staticfiles %}
+
+{% block content %}
+
+<ul>
+{% for model in models %}
+    {% if not model.parent %}                   ## add this ligic
+       {% include "compsystems/tree_model.html" %}
+    {% endif %}
+{% endfor %}
+</ul>
+
+{% endblock %}

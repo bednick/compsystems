@@ -1,0 +1,11 @@
+<li><a href="{{ request.path }}?model_id={{model.id}}"> {{ model.name }}</a>
+    {%if model.children %}
+    <ul>
+        {% for ch in model.children.get_queryset %}
+        {% with model=ch template_name="compsystems/tree.html" %}
+        {% include template_name %}
+        {% endwith %}
+        {% endfor %}
+    </ul>
+    {% endif %}
+</li>

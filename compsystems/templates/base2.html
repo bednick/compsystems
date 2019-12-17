@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Django Girls blog</title>
+    </head>
+    <body>
+        <div>
+            <h1><a href="/">Django Girls Blog</a></h1>
+        </div>
+
+
+
+
+        <ul>
+        {% for model in models %}
+            {% if not model.parent %}
+                {% include "compsystems/tree.html" %}
+            {% endif %}
+        {% endfor %}
+        </ul>
+    </body>
+</html>
