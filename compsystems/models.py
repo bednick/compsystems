@@ -17,7 +17,4 @@ class HierarchicalModel(models.Model):
     context = models.TextField(_('context'), max_length=10000, null=False)
 
     def __str__(self):
-        if len(self.context) >= 10:
-            return f'{self.id}. {self.name}: {self.context[:10]}...'
-        else:
-            return f'{self.id}. {self.name}: {self.context}'
+        return f'{self.id}. {self.name}'

@@ -20,4 +20,4 @@ def models(request: WSGIRequest):
             context_objs = HierarchicalModel.objects.filter(context__contains=search)
         except Exception:
             pass
-    return render(request, 'compsystems/root_tree.html', {'models': objects, 'context_objs': context_objs})
+    return render(request, 'base.html', {'models': objects, 'context_objs': context_objs})

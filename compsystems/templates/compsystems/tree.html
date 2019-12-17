@@ -2,9 +2,9 @@
     {%if model.children %}
     <ul>
         {% for ch in model.children.get_queryset %}
-        {% with model=ch template_name="compsystems/tree.html" %}
-        {% include template_name %}
-        {% endwith %}
+            {% with model=ch template_name="compsystems/tree.html" %}
+                {% include template_name %}
+            {% endwith %}
         {% endfor %}
     </ul>
     {% endif %}

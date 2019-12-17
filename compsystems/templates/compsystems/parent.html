@@ -1,0 +1,6 @@
+<a href="{{ request.path }}?model_id={{context_obj.id}}"> {{ context_obj.name }}</a>
+{%if context_obj.parent %}
+    {% with context_obj=context_obj.parent template_name="compsystems/parent.html" %}
+        {% include template_name %}
+    {% endwith %}
+{% endif %}
